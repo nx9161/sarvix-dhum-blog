@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sarvix Codes is Naman Parmar's Digital Humanities learning journal, connecting data, culture, history, and human questions.">
+  <title>Sarvix Codes — Data, Culture, and Human Questions</title>
+  <style>
+    :root {
+      --ink: #0b1320;
+      --ink-2: #111d30;
+      --paper: #f5f7f4;
+      --muted: #a9b6c8;
+      --soft: #dce6ee;
+      --coral: #ff715b;
+      --lime: #c8f169;
+      --sky: #8dd7e8;
+      --line: rgba(220, 230, 238, .18);
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--paper);
+      background: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .skip-link { position: absolute; left: -9999px; top: 12px; }
+    .skip-link:focus { left: 12px; z-index: 9; padding: 10px 14px; background: var(--lime); color: var(--ink); border-radius: 10px; }
+    .shell { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: -.03em; }
+    .mark { width: 34px; height: 34px; display: grid; place-items: center; color: var(--ink); background: var(--lime); border-radius: 10px; font-size: 17px; }
+    nav { display: flex; gap: 20px; color: var(--muted); font-size: .92rem; }
+    nav a { text-decoration: none; }
+    nav a:hover, nav a:focus { color: var(--lime); }
+    .eyebrow { color: var(--lime); text-transform: uppercase; letter-spacing: .16em; font-size: .73rem; font-weight: 800; }
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 58px; align-items: center; padding: 86px 0 76px; }
+    h1, h2, h3 { line-height: 1.08; letter-spacing: -.04em; margin: 0; }
+    h1 { max-width: 720px; font-size: clamp(3.2rem, 7vw, 6.7rem); }
+    .hero-copy { max-width: 620px; color: var(--soft); font-size: 1.15rem; margin: 24px 0 0; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--soft); font-size: .84rem; }
+    .pill strong { color: var(--coral); }
+    .hero-art { position: relative; min-height: 320px; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: radial-gradient(circle at 25% 20%, rgba(141,215,232,.32), transparent 35%), radial-gradient(circle at 90% 80%, rgba(255,113,91,.32), transparent 36%), var(--ink-2); }
+    .hero-art::before { content: ""; position: absolute; inset: 42px; border: 1px dashed rgba(200,241,105,.55); border-radius: 50%; transform: rotate(-18deg); }
+    .hero-art::after { content: ""; position: absolute; width: 190px; height: 190px; left: 25%; top: 21%; border: 2px solid var(--coral); border-radius: 50% 45% 55% 40%; box-shadow: 35px 35px 0 -32px var(--sky), -28px 30px 0 -31px var(--lime); transform: rotate(24deg); }
+    .signal { position: absolute; z-index: 2; padding: 9px 12px; background: rgba(11,19,32,.84); border: 1px solid var(--line); border-radius: 10px; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    .signal.one { top: 23px; left: 24px; color: var(--lime); }
+    .signal.two { right: 22px; top: 42%; color: var(--sky); }
+    .signal.three { left: 32px; bottom: 22px; color: var(--coral); }
+    .section { padding: 76px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+    .section-heading p { max-width: 450px; margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { min-height: 180px; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: rgba(17,29,48,.72); }
+    .card .number { color: var(--coral); font-size: .8rem; font-weight: 800; }
+    .card h3 { margin-top: 16px; font-size: 1.3rem; }
+    .card p { margin: 12px 0 0; color: var(--muted); font-size: .94rem; }
+    .article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 62px; align-items: start; }
+    article { color: var(--soft); font-family: Georgia, "Times New Roman", serif; font-size: 1.1rem; }
+    article h2, article h3 { color: var(--paper); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    article h2 { font-size: clamp(2.1rem, 4vw, 3.8rem); margin-bottom: 14px; }
+    article h3 { font-size: 1.55rem; margin: 42px 0 12px; }
+    article p { max-width: 760px; }
+    article blockquote { margin: 28px 0; padding: 20px 24px; border-left: 3px solid var(--coral); color: var(--paper); background: rgba(255,113,91,.07); font-size: 1.35rem; }
+    article a { color: var(--lime); }
+    .post-label { color: var(--coral); font: 800 .76rem/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+    .sidebar { position: sticky; top: 24px; }
+    .sidebox { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: rgba(17,29,48,.72); margin-bottom: 16px; }
+    .sidebox h3 { font-size: 1rem; }
+    .sidebox p, .sidebox li { color: var(--muted); font-size: .88rem; }
+    .sidebox ul { padding-left: 18px; margin-bottom: 0; }
+    .tool-callout { margin: 36px 0; padding: 24px; border: 1px solid rgba(200,241,105,.35); border-radius: 18px; background: rgba(200,241,105,.07); }
+    .tool-callout strong { color: var(--lime); font-family: Inter, sans-serif; }
+    .sources { display: grid; gap: 12px; }
+    .source { display: block; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--soft); }
+    .source:hover, .source:focus { border-color: var(--lime); color: var(--lime); }
+    footer { padding: 32px 0 52px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
+    footer strong { color: var(--paper); }
+    @media (max-width: 820px) {
+      .hero, .article-layout { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; }
+      .hero-art { min-height: 250px; }
+      .grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      nav { gap: 11px; font-size: .8rem; }
+    }
+    @media (max-width: 520px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      nav { flex-wrap: wrap; }
+      h1 { font-size: 3.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="shell topbar">
+      <a class="brand" href="#top" aria-label="Sarvix Codes home"><span class="mark">↗</span><span>Sarvix Codes</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#reflection">Reflection</a>
+        <a href="#tool">Digital Tool</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="top" class="shell hero">
+      <div>
+        <div class="eyebrow">DHUM field notes · Rowan University</div>
+        <h1>Data has a story before it becomes a dataset.</h1>
+        <p class="hero-copy">I’m Naman Parmar, a Data Science major exploring Digital Humanities, digital archives, and the human questions inside technical systems.</p>
+        <div class="hero-meta">
+          <span class="pill"><strong>01</strong> Weekly reflection</span>
+          <span class="pill"><strong>Tool</strong> Hypothesis annotation</span>
+          <span class="pill"><strong>Focus</strong> Visibility &amp; power</span>
+        </div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Abstract diagram representing data, annotation, and connected ideas">
+        <span class="signal one">search / context</span>
+        <span class="signal two">human + machine</span>
+        <span class="signal three">read the gaps</span>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="now-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <div><div class="eyebrow">What I’m carrying forward</div><h2 id="now-heading">Three ideas from Week 3.</h2></div>
+          <p>Digital Humanities is not only about using tools. It is about understanding how tools shape knowledge, access, and memory.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="number">01 / RECORD</div><h3>Digital records are constructed.</h3><p>Archives and datasets inherit decisions about what is collected, described, preserved, and made discoverable.</p></div>
+          <div class="card"><div class="number">02 / SEARCH</div><h3>Speed changes the question.</h3><p>Full-text search expands discovery across borders, but the easiest sources to find are not automatically the most representative.</p></div>
+          <div class="card"><div class="number">03 / PRACTICE</div><h3>Technical skill is ethical skill.</h3><p>Building, mapping, annotating, and analyzing can become forms of public work when they are done with context and care.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reflection" class="section" aria-labelledby="post-heading">
+      <div class="shell article-layout">
+        <article>
+          <div class="post-label">Week 3 · Weekly reflection</div>
+          <h2 id="post-heading">The Search Box Is Not Neutral</h2>
+          <p><strong>My first Digital Humanities reflection</strong></p>
+          <p>Before this week, I usually thought of digital tools as ways to make research faster. Search engines find information, databases organize it, maps display it, and code helps us process it. As a Data Science major, I am used to thinking about tools in terms of efficiency: How much information can I collect? How quickly can I find a pattern? How can I make a result easier to interpret?</p>
+          <p>The Week 3 readings made me slow down and question that mindset. Digital Humanities is not just about applying technology to humanities material. It is also about asking what technology changes, what it hides, and who gets represented when information becomes digital.</p>
+
+          <h3>Digital Humanities as intervention</h3>
+          <p>In the introduction to <em>New Digital Worlds</em>, Roopika Risam describes postcolonial Digital Humanities as an intervention in the “digital cultural record.” Her example of the Puerto Rico Mapathon made this idea concrete. After Hurricane Maria, students, university staff, and community members worked with OpenStreetMap to improve geographic information that could support disaster relief. This was not technology for technology’s sake. Mapping became a form of public service, collaboration, and teaching.</p>
+          <p>What stood out to me was the connection between theory, praxis, and pedagogy. Theory helps us understand the historical and political problems inside digital systems. Praxis means acting on those problems by building or improving tools, archives, maps, and workflows. Pedagogy means teaching other people how to participate. The Mapathon brought all three together: participants thought critically, performed technical work, and helped others learn the process.</p>
+          <p>Risam also argues that the digital cultural record contains gaps, omissions, and older colonial patterns. Digital projects can preserve and share knowledge, but they can also repeat the same inequalities found in older archives. If some languages, communities, and histories were underrepresented in the original cultural record, digitizing that record does not automatically make it fair. The process of choosing what to scan, how to describe it, how to organize it, and who can access it all matters.</p>
+          <p>That point connected strongly to my Data Science background. A dataset is never simply “the truth.” It reflects decisions about collection, categories, missing values, labels, and access. A digital archive has similar decisions built into it. The database may look objective because it is organized and searchable, but its structure still reflects human choices and institutional power.</p>
+
+          <h3>The opportunities and blind spots of search</h3>
+          <p>Lara Putnam’s article, “The Transnational and the Text-Searchable,” focuses on how digitized sources and full-text search have changed historical research. Search makes it possible to discover people, places, words, and connections across large collections without physically traveling to every archive. Putnam calls attention to the value of “side-glancing”: looking beyond the boundaries of a familiar topic or location to notice unexpected connections.</p>
+          <p>This is exciting to me as someone who works with data. Search increases the scale and speed of discovery. It can reveal patterns that would have been difficult or impossible to find through older research methods. Putnam explains that digital search has helped historians think across national borders because information is no longer as tightly connected to one physical place.</p>
+          <p>At the same time, the article warns that easier discovery can create new forms of ignorance. Search results are shaped by what has been digitized, what can be recognized by optical character recognition, what language the system handles well, and what terms a researcher already knows to enter. The sources that are easiest to find can begin to look like the most important sources, even when they are only the most searchable ones.</p>
+          <blockquote>Digital search does not simply open a window onto the past. It creates a particular window, with a particular frame.</blockquote>
+          <p>Putnam’s argument changed the way I think about a search box. It can help us see connections, but it can also make us overlook local context, people who left fewer written records, and communities whose materials were never digitized. In data terms, search is powerful, but it still has coverage problems, bias, and blind spots.</p>
+
+          <div id="tool" class="tool-callout">
+            <strong>Digital skill I practiced: Hypothesis annotation</strong>
+            <p>The new tool I practiced this week was Hypothesis, a web-based annotation tool. Instead of reading a PDF silently and keeping all of my reactions separate from the text, I could select a passage, highlight it, and attach a note directly to the relevant sentence. I could also read other annotations and see how classmates interpreted the same passage.</p>
+            <p>The basic workflow was simple: select text, choose Annotate, write a response, and then return to the page to read the conversation around it. The harder part was deciding what deserved an annotation. I became more intentional when I used three questions: What is the author claiming? What does this connect to? What do I want to question?</p>
+            <p>The biggest challenge was moving between close reading and the interface. Annotation adds another layer to reading because I was not only trying to understand the author’s argument; I was also trying to explain my own reaction clearly enough for someone else to follow. Reading classmates’ notes showed me that a passage can generate several legitimate questions. Annotation became less like finding one correct answer and more like making my thinking visible.</p>
+            <p>If I taught Hypothesis to another student, I would begin with a short passage and ask them to write one observation, one connection, and one question. I would also explain that a useful annotation does not have to be long. It should make a specific part of the reading easier to discuss.</p>
+          </div>
+
+          <h3>What I am taking forward</h3>
+          <p>My main takeaway from this week is that Digital Humanities is both technical and ethical. It asks us to build, search, map, annotate, and analyze, but it also asks us to examine the assumptions inside those actions. The goal is not simply to add more information to the internet. The goal is to create digital knowledge more carefully, with attention to context, representation, access, and power.</p>
+          <p>As a Data Science major, I am interested in the possibilities of computation. This week reminded me that computational skill is strongest when it is paired with humanistic questions. Before trusting a dataset, archive, search result, or visualization, I should ask: Who created it? What was left out? Which communities are represented? What would I fail to see if I only followed the easiest results?</p>
+          <p>That is the question I want to carry into the rest of this course—and into the rest of my work with data: not only “What can this tool show me?” but also “What is this tool making harder to see?”</p>
+        </article>
+
+        <aside class="sidebar" aria-label="Post details">
+          <div class="sidebox"><h3>Field note</h3><p>This site documents my learning process as a Data Science major working through Digital Humanities questions at Rowan University.</p></div>
+          <div class="sidebox"><h3>Readings</h3><ul><li>Roopika Risam, <em>New Digital Worlds</em></li><li>Lara Putnam, “The Transnational and the Text-Searchable”</li></ul></div>
+          <div class="sidebox"><h3>Tags</h3><p>Digital Humanities · Data Science · Digital Archives · Research Methods · Postcolonial DH</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="shell">
+        <div class="section-heading"><div><div class="eyebrow">About this notebook</div><h2 id="about-heading">Learning in public, carefully.</h2></div><p>Sarvix Codes is a student space for documenting tools, questions, experiments, and the people behind the data.</p></div>
+        <div class="sources">
+          <a class="source" href="https://muse.jhu.edu/book/62714" target="_blank" rel="noopener">Roopika Risam — <em>New Digital Worlds: Postcolonial Digital Humanities in Theory, Praxis, and Pedagogy</em> ↗</a>
+          <a class="source" href="https://academic.oup.com/ahr/article/121/2/377/2581842" target="_blank" rel="noopener">Lara Putnam — “The Transnational and the Text-Searchable: Digitized Sources and the Shadows They Cast” ↗</a>
+          <a class="source" href="https://web.hypothes.is/" target="_blank" rel="noopener">Hypothesis — collaborative web annotation ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell"><strong>Sarvix Codes</strong> · Data, culture, and human questions · Built as a Rowan DHUM learning journal.</div>
+  </footer>
+</body>
+</html>
