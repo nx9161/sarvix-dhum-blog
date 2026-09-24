@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sarvix Codes is Naman Parmar's Digital Humanities learning journal, connecting data, culture, history, and human questions.">
-  <title>Sarvix Codes — Data, Culture, and Human Questions</title>
+  <meta name="description" content="DHUM 52500 Blog Posting is Naman Parmar's Digital Humanities learning journal at Rowan University.">
+  <title>DHUM 52500 Blog Posting — Sarvix Codes</title>
   <style>
     :root {
       --ink: #0b1320;
@@ -46,6 +46,12 @@
     .nav-menu { position: absolute; right: 0; top: calc(100% + 12px); z-index: 20; display: grid; min-width: 230px; gap: 4px; padding: 8px; border: 1px solid rgba(200,241,105,.24); border-radius: 14px; background: rgba(17,29,48,.95); backdrop-filter: blur(18px); box-shadow: 0 18px 42px rgba(0,0,0,.32), 0 0 0 1px rgba(141,215,232,.06); }
     .nav-menu a { display: block; padding: 10px 12px; border-radius: 9px; color: var(--soft); white-space: nowrap; }
     .nav-menu a:hover, .nav-menu a:focus { background: rgba(200,241,105,.1); color: var(--lime); }
+    .nav-menu a { touch-action: manipulation; }
+    .temporarily-hidden { display: none !important; }
+    .about-grid, .ambition-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .about-card, .ambition-card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: rgba(17,29,48,.72); }
+    .about-card h3, .ambition-card h3 { margin-bottom: 10px; }
+    .about-card p, .ambition-card p { margin: 0; color: var(--soft); }
     .eyebrow { color: var(--lime); text-transform: uppercase; letter-spacing: .16em; font-size: .73rem; font-weight: 800; }
     .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 58px; align-items: center; padding: 86px 0 76px; }
     h1, h2, h3 { line-height: 1.08; letter-spacing: -.04em; margin: 0; }
@@ -107,12 +113,14 @@
       .sidebar { position: static; }
       .storymap-layout { grid-template-columns: 1fr; }
       .storymap-embed { height: 520px; }
-      nav { gap: 11px; font-size: .8rem; }
+      nav { position: relative; width: 100%; gap: 11px; font-size: .8rem; }
+      .nav-menu { left: 0; right: auto; top: calc(100% + 8px); min-width: min(250px, calc(100vw - 28px)); z-index: 100; }
     }
     @media (max-width: 520px) {
       .shell { width: min(calc(100% - 28px), var(--max)); }
       .topbar { align-items: flex-start; flex-direction: column; }
-      nav { flex-wrap: wrap; }
+      nav { width: 100%; flex-wrap: wrap; }
+      .nav-menu { min-width: min(240px, calc(100vw - 28px)); }
       h1 { font-size: 3.1rem; }
     }
   </style>
@@ -121,7 +129,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="shell topbar">
-      <a class="brand" href="#top" aria-label="Sarvix Codes home"><span class="mark">↗</span><span>Sarvix Codes</span></a>
+      <a class="brand" href="#top" aria-label="DHUM 52500 Blog Posting home"><span class="mark">↗</span><span>DHUM 52500 · Blog Posting</span></a>
       <nav aria-label="Main navigation">
         <details class="nav-dropdown">
           <summary>Reflection</summary>
@@ -130,8 +138,7 @@
             <a href="#week-3">Blog-2 · Week 3</a>
           </div>
         </details>
-        <a href="#storymap">Digital Tool</a>
-        <a href="#about">About</a>
+        <a href="#about-me">About</a>
       </nav>
     </div>
   </header>
@@ -139,7 +146,7 @@
   <main id="main">
     <div id="top" class="shell hero">
       <div>
-        <div class="eyebrow">DHUM field notes · Rowan University</div>
+        <div class="eyebrow">DHUM 52500 · Rowan University</div>
         <h1>Data has a story before it becomes a dataset.</h1>
         <p class="hero-copy">I’m Naman Parmar, a Data Science major exploring Digital Humanities, digital archives, and the human questions inside technical systems.</p>
         <div class="hero-meta">
@@ -243,18 +250,18 @@
           <h3>What I am taking forward</h3>
           <p>My main takeaway from this week is that Digital Humanities is both technical and ethical. It asks us to build, search, map, annotate, and analyze, but it also asks us to examine the assumptions inside those actions. The goal is not simply to add more information to the internet. The goal is to create digital knowledge more carefully, with attention to context, representation, access, and power.</p>
           <p>As a Data Science major, I am interested in the possibilities of computation. This week reminded me that computational skill is strongest when it is paired with humanistic questions. Before trusting a dataset, archive, search result, or visualization, I should ask: Who created it? What was left out? Which communities are represented? What would I fail to see if I only followed the easiest results?</p>
-          <p>That is the question I want to carry into the rest of this course—and into the rest of my work with data: not only “What can this tool show me?” but also “What is this tool making harder to see?”</p>
+          <p>That is the question I want to carry into the rest of this course and into the rest of my work with data: not only “What can this tool show me?” but also “What is this tool making harder to see?”</p>
         </article>
 
         <aside class="sidebar" aria-label="Post details">
-          <div class="sidebox"><h3>Field note</h3><p>This site documents my learning process as a Data Science major working through Digital Humanities questions at Rowan University.</p></div>
+          <div class="sidebox"><h3>Field note</h3><p>Week 3 taught me that search, maps, and datasets are never neutral. I am practicing a small algorithmic habit—record the query, compare what appears, look for what is missing, and ask who benefits from the way results are organized—and I will carry it into next week’s work.</p></div>
           <div class="sidebox"><h3>Readings</h3><ul><li>Roopika Risam, <em>New Digital Worlds</em></li><li>Lara Putnam, “The Transnational and the Text-Searchable”</li></ul></div>
-          <div class="sidebox"><h3>Tags</h3><p>Digital Humanities · Data Science · Digital Archives · Research Methods · Postcolonial DH</p></div>
+          <div class="sidebox"><h3>Small algorithm</h3><p>Ask → Search → Compare → Notice the gaps → Reflect. I developed this working sequence with GPT Astra 5.6 AI while writing this week’s reflection, and I will keep practicing it in next week’s work.</p></div>
         </aside>
       </div>
     </section>
 
-    <section id="storymap" class="section" aria-labelledby="storymap-heading">
+    <section id="storymap" class="section temporarily-hidden" aria-labelledby="storymap-heading">
       <div class="shell">
         <div class="section-heading"><div><div class="eyebrow">Digital tool · StoryMap JS</div><h2 id="storymap-heading">A life can be read as a route.</h2></div><p>For the next digital-tool assignment, I used Knight Lab StoryMap to map fourteen places I have visited in my free time while living and studying as an international F-1 student in Glassboro, New Jersey, at Rowan University.</p></div>
         <div class="storymap-layout">
@@ -268,24 +275,39 @@
             <div class="sidebox"><h3>Challenge + teaching note</h3><p>The main challenge was deciding how to show travel without making it look like I moved from place to place. If I taught this tool, I would begin with a student’s home base and free-time route, then ask them to write the meaning of each trip before choosing the visual design.</p></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="section" aria-labelledby="about-heading">
+      </di    <section id="about-me" class="section" aria-labelledby="about-me-heading">
       <div class="shell">
-        <div class="section-heading"><div><div class="eyebrow">About this notebook</div><h2 id="about-heading">Learning in public, carefully.</h2></div><p>Sarvix Codes is a student space for documenting tools, questions, experiments, and the people behind the data.</p></div>
-        <div class="sources">
-          <a class="source" href="https://muse.jhu.edu/book/62714" target="_blank" rel="noopener">Roopika Risam — <em>New Digital Worlds: Postcolonial Digital Humanities in Theory, Praxis, and Pedagogy</em> ↗</a>
-          <a class="source" href="https://academic.oup.com/ahr/article/121/2/377/2581842" target="_blank" rel="noopener">Lara Putnam — “The Transnational and the Text-Searchable: Digitized Sources and the Shadows They Cast” ↗</a>
-          <a class="source" href="https://web.hypothes.is/" target="_blank" rel="noopener">Hypothesis — collaborative web annotation ↗</a>
+        <div class="section-heading"><div><div class="eyebrow">About me</div><h2 id="about-me-heading">A student building across disciplines.</h2></div><p>A small introduction beyond the weekly reflections.</p></div>
+        <div class="about-grid">
+          <div class="about-card"><h3>Where I am now</h3><p>I’m an international transfer graduate student studying Data Science at Rowan University. Digital Humanities gives me another way to ask how technology, culture, and people shape one another.</p></div>
+          <div class="about-card"><h3>What I enjoy</h3><p>I like creating small applications, working on creative projects, reading books, travelling, and hiking in my free time.</p></div>
         </div>
       </div>
     </section>
+
+    <section id="ambitions" class="section" aria-labelledby="ambitions-heading">
+      <div class="shell">
+        <div class="section-heading"><div><div class="eyebrow">Long-term direction</div><h2 id="ambitions-heading">Big plans, one experiment at a time.</h2></div><p>Sometimes I get too ambitious—but that is part of the fun.</p></div>
+        <div class="ambition-grid">
+          <div class="ambition-card"><h3>Build an e-commerce business</h3><p>My goal is to start my own e-commerce business and learn by turning ideas into useful, real-world systems.</p></div>
+          <div class="ambition-card"><h3>Create an automation software service</h3><p>I also want to start an automation software service company that helps people and organizations spend less time on repetitive work.</p></div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div class="shell"><strong>Sarvix Codes</strong> · Data, culture, and human questions · Built as a Rowan DHUM learning journal.</div>
+    <div class="shell"><strong>DHUM 52500 · Blog Posting</strong> · Digital Humanities learning journal at Rowan University.</div>
   </footer>
     <!-- Git-connected deployment checkpoint -->
+  <script>
+    document.querySelectorAll('.nav-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        const dropdown = link.closest('.nav-dropdown');
+        if (dropdown) dropdown.removeAttribute('open');
+      });
+    });
+  </script>
   </body>
 </html>
