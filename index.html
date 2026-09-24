@@ -92,6 +92,11 @@
     .sources { display: grid; gap: 12px; }
     .source { display: block; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--soft); }
     .source:hover, .source:focus { border-color: var(--lime); color: var(--lime); transform: translateX(4px); }
+    .storymap-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 24px; align-items: start; }
+    .storymap-embed { display: block; width: 100%; height: 620px; border: 1px solid rgba(141,215,232,.28); border-radius: 22px; background: #fff; box-shadow: 0 18px 46px rgba(0,0,0,.2); }
+    .storymap-link { display: inline-flex; margin-top: 12px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--lime); text-decoration: none; font-size: .88rem; }
+    .storymap-link:hover, .storymap-link:focus { border-color: var(--lime); background: rgba(200,241,105,.08); }
+    .storymap-notes .sidebox { margin-bottom: 12px; }
     footer { padding: 32px 0 52px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--line); }
     footer strong { color: var(--paper); }
     @media (max-width: 820px) {
@@ -100,6 +105,8 @@
       .hero-art { min-height: 250px; }
       .grid { grid-template-columns: 1fr; }
       .sidebar { position: static; }
+      .storymap-layout { grid-template-columns: 1fr; }
+      .storymap-embed { height: 520px; }
       nav { gap: 11px; font-size: .8rem; }
     }
     @media (max-width: 520px) {
@@ -123,7 +130,7 @@
             <a href="#week-3">Blog-2 · Week 3</a>
           </div>
         </details>
-        <a href="#tool">Digital Tool</a>
+        <a href="#storymap">Digital Tool</a>
         <a href="#about">About</a>
       </nav>
     </div>
@@ -244,6 +251,23 @@
           <div class="sidebox"><h3>Readings</h3><ul><li>Roopika Risam, <em>New Digital Worlds</em></li><li>Lara Putnam, “The Transnational and the Text-Searchable”</li></ul></div>
           <div class="sidebox"><h3>Tags</h3><p>Digital Humanities · Data Science · Digital Archives · Research Methods · Postcolonial DH</p></div>
         </aside>
+      </div>
+    </section>
+
+    <section id="storymap" class="section" aria-labelledby="storymap-heading">
+      <div class="shell">
+        <div class="section-heading"><div><div class="eyebrow">Digital tool · StoryMap JS</div><h2 id="storymap-heading">A life can be read as a route.</h2></div><p>For the next digital-tool assignment, I used Knight Lab StoryMap to map fourteen meaningful places from my first 1.9 years in the United States.</p></div>
+        <div class="storymap-layout">
+          <div>
+            <iframe class="storymap-embed" title="Fourteen Places, 1.9 Years: Learning America Through Movement" src="https://uploads.knightlab.com/storymapjs/9494b703cf588f39b21231942bda31b6/14-states-1-9-years-learning-america-through-movement/index.html" loading="lazy" allowfullscreen></iframe>
+            <a class="storymap-link" href="https://uploads.knightlab.com/storymapjs/9494b703cf588f39b21231942bda31b6/14-states-1-9-years-learning-america-through-movement/index.html" target="_blank" rel="noopener">Open the StoryMap in a new tab ↗</a>
+          </div>
+          <div class="storymap-notes">
+            <div class="sidebox"><h3>My route</h3><p>New Jersey · New York · Atlanta · Missouri · West Virginia · Virginia · Washington, D.C. · Maryland · Delaware · Massachusetts · Pennsylvania · North Carolina · Kentucky · Ohio</p></div>
+            <div class="sidebox"><h3>How I learned it</h3><p>I started by creating a title slide, searching for locations, choosing map markers, and adding a headline and reflection to each chapter. I grouped the fourteen places into five readable chapters instead of turning the map into an overwhelming list of pins.</p></div>
+            <div class="sidebox"><h3>Challenge + teaching note</h3><p>The main challenge was deciding what a map should show and what it cannot explain. If I taught this tool, I would begin with a person’s route, then ask them to write the meaning of each place before choosing the visual design.</p></div>
+          </div>
+        </div>
       </div>
     </section>
 
