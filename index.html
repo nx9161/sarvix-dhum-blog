@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="DHUM 52500 Blog Posting is Naman Parmar's Digital Humanities learning journal at Rowan University.">
-  <title>DHUM 52500 Blog Posting — Sarvix Codes</title>
+  <title>DHUM 52500 Blog Posting · Sarvix Codes</title>
   <style>
     :root {
       --ink: #0b1320;
@@ -46,8 +46,27 @@
     .nav-menu { position: absolute; right: 0; top: calc(100% + 12px); z-index: 20; display: grid; min-width: 230px; gap: 4px; padding: 8px; border: 1px solid rgba(200,241,105,.24); border-radius: 14px; background: rgba(17,29,48,.95); backdrop-filter: blur(18px); box-shadow: 0 18px 42px rgba(0,0,0,.32), 0 0 0 1px rgba(141,215,232,.06); }
     .nav-menu a { display: block; padding: 10px 12px; border-radius: 9px; color: var(--soft); white-space: nowrap; }
     .nav-menu a:hover, .nav-menu a:focus { background: rgba(200,241,105,.1); color: var(--lime); }
+    .nav-about { padding: 7px 12px; border: 1px solid rgba(200,241,105,.34); border-radius: 999px; color: var(--lime); }
+    .nav-about:hover, .nav-about:focus { background: rgba(200,241,105,.1); color: var(--lime); }
     .nav-menu a { touch-action: manipulation; }
     .temporarily-hidden { display: none !important; }
+    .about-section { overflow: hidden; }
+    .about-profile { position: relative; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: center; padding: 30px; border: 1px solid rgba(141,215,232,.28); border-radius: 26px; overflow: hidden; background: linear-gradient(135deg, rgba(141,215,232,.10), rgba(17,29,48,.9) 46%, rgba(255,113,91,.08)); box-shadow: 0 20px 54px rgba(0,0,0,.18); }
+    .about-profile::after { content: ""; position: absolute; width: 260px; height: 260px; right: -90px; top: -120px; border: 1px solid rgba(200,241,105,.22); border-radius: 50%; box-shadow: 0 0 0 24px rgba(200,241,105,.035), 0 0 0 48px rgba(200,241,105,.025); }
+    .about-profile-mark { position: relative; z-index: 1; display: grid; place-items: center; align-content: center; width: 172px; height: 172px; margin: 0 auto; border: 1px solid rgba(200,241,105,.58); border-radius: 50%; color: var(--ink); background: var(--lime); box-shadow: 0 0 0 10px rgba(200,241,105,.08), 0 18px 42px rgba(0,0,0,.24); transform: rotate(-5deg); }
+    .about-profile-mark span { font-size: 3.2rem; font-weight: 900; letter-spacing: -.09em; line-height: 1; }
+    .about-profile-mark small { margin-top: 8px; font-size: .68rem; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+    .about-profile-copy { position: relative; z-index: 1; max-width: 720px; }
+    .about-profile-copy h2 { max-width: 680px; margin-top: 8px; }
+    .about-lead { max-width: 680px; margin: 18px 0 0; color: var(--soft); font-size: 1.05rem; }
+    .about-facts { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+    .about-facts span { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--soft); font-size: .78rem; }
+    .about-facts strong { color: var(--coral); }
+    .about-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+    .about-card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: rgba(17,29,48,.72); }
+    .about-card h3 { margin: 8px 0 10px; }
+    .about-card p { margin: 0; color: var(--soft); }
+    .card-kicker { color: var(--lime); text-transform: uppercase; letter-spacing: .14em; font-size: .7rem; font-weight: 800; }
     .about-grid, .ambition-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .about-card, .ambition-card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: rgba(17,29,48,.72); }
     .about-card h3, .ambition-card h3 { margin-bottom: 10px; }
@@ -113,6 +132,9 @@
       .sidebar { position: static; }
       .storymap-layout { grid-template-columns: 1fr; }
       .storymap-embed { height: 520px; }
+      .about-profile { grid-template-columns: 1fr; padding: 24px; }
+      .about-profile-mark { width: 132px; height: 132px; }
+      .about-cards { grid-template-columns: 1fr; }
       nav { position: relative; width: 100%; gap: 11px; font-size: .8rem; }
       .nav-menu { left: 0; right: auto; top: calc(100% + 8px); min-width: min(250px, calc(100vw - 28px)); z-index: 100; }
     }
@@ -138,7 +160,7 @@
             <a href="#week-3">Blog-2 · Week 3</a>
           </div>
         </details>
-        <a href="#about-me">About</a>
+        <a class="nav-about" href="#about-me">About Me</a>
       </nav>
     </div>
   </header>
@@ -212,7 +234,7 @@
         <aside class="sidebar" aria-label="Blog-1 details">
           <div class="sidebox"><h3>Field note</h3><p>Weeks 1 and 2 introduced me to the problem of keeping digital culture available for future readers.</p></div>
           <div class="sidebox"><h3>Readings</h3><ul><li><a href="https://www.bbc.com/future/article/20240912-the-archivists-battling-to-save-the-internet" target="_blank" rel="noopener">Chris Stokel-Walker, “We’re losing our digital history” ↗</a></li><li><a href="https://academic.oup.com/ahr/article-abstract/108/3/735/22504" target="_blank" rel="noopener">Roy Rosenzweig, “Scarcity or Abundance?” ↗</a></li><li><a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive / Wayback Machine ↗</a></li></ul></div>
-          <div class="sidebox"><h3>Tags</h3><p>Digital Preservation · Internet Archive · Digital History · Data Science · Web Archives</p></div>
+          <div class="sidebox"><h3>Small algorithm · GPT Astra 5.6 reflection</h3><p>Digital Preservation · Internet Archive · Digital History · Data Science · Web Archives</p></div>
         </aside>
       </div>
     </section>
@@ -254,9 +276,9 @@
         </article>
 
         <aside class="sidebar" aria-label="Post details">
-          <div class="sidebox"><h3>Field note</h3><p>Week 3 taught me that search, maps, and datasets are never neutral. I am practicing a small algorithmic habit—record the query, compare what appears, look for what is missing, and ask who benefits from the way results are organized—and I will carry it into next week’s work.</p></div>
+          <div class="sidebox"><h3>Field note</h3><p>Week 3 taught me that search, maps, and datasets are never neutral. I am practicing a small algorithmic habit·record the query, compare what appears, look for what is missing, and ask who benefits from the way results are organized·and I will carry it into next week’s work.</p></div>
           <div class="sidebox"><h3>Readings</h3><ul><li>Roopika Risam, <em>New Digital Worlds</em></li><li>Lara Putnam, “The Transnational and the Text-Searchable”</li></ul></div>
-          <div class="sidebox"><h3>Small algorithm</h3><p>Ask → Search → Compare → Notice the gaps → Reflect. I developed this working sequence with GPT Astra 5.6 AI while writing this week’s reflection, and I will keep practicing it in next week’s work.</p></div>
+          <div class="sidebox"><h3>Small algorithm · GPT Astra 5.6 reflection</h3><p>Digital Humanities · Data Science · Digital Archives · Research Methods · Postcolonial DH</p></div>
         </aside>
       </div>
     </section>
@@ -275,19 +297,27 @@
             <div class="sidebox"><h3>Challenge + teaching note</h3><p>The main challenge was deciding how to show travel without making it look like I moved from place to place. If I taught this tool, I would begin with a student’s home base and free-time route, then ask them to write the meaning of each trip before choosing the visual design.</p></div>
           </div>
         </div>
-      </di    <section id="about-me" class="section" aria-labelledby="about-me-heading">
+      </di    <section id="about-me" class="section about-section" aria-labelledby="about-me-heading">
       <div class="shell">
-        <div class="section-heading"><div><div class="eyebrow">About me</div><h2 id="about-me-heading">A student building across disciplines.</h2></div><p>A small introduction beyond the weekly reflections.</p></div>
-        <div class="about-grid">
-          <div class="about-card"><h3>Where I am now</h3><p>I’m an international transfer graduate student studying Data Science at Rowan University. Digital Humanities gives me another way to ask how technology, culture, and people shape one another.</p></div>
-          <div class="about-card"><h3>What I enjoy</h3><p>I like creating small applications, working on creative projects, reading books, travelling, and hiking in my free time.</p></div>
+        <div class="about-profile">
+          <div class="about-profile-mark" aria-hidden="true"><span>DH</span><small>52500</small></div>
+          <div class="about-profile-copy">
+            <div class="eyebrow">About me</div>
+            <h2 id="about-me-heading">Data, code, and curiosity in motion.</h2>
+            <p class="about-lead">I’m an international transfer graduate student studying Data Science at Rowan University. I use this space to connect technical practice with Digital Humanities questions about people, culture, access, and meaning.</p>
+            <div class="about-facts"><span><strong>Study</strong> Data Science + DHUM</span><span><strong>Base</strong> Glassboro, New Jersey</span><span><strong>Mode</strong> Learn by building</span></div>
+          </div>
+        </div>
+        <div class="about-cards">
+          <article class="about-card"><div class="card-kicker">Outside the classroom</div><h3>Small applications, wide interests.</h3><p>I like creating small applications, working on creative projects, reading books, travelling, and hiking in my free time.</p></article>
+          <article class="about-card"><div class="card-kicker">How I work</div><h3>Curiosity first, iteration always.</h3><p>I learn by making a version, noticing what is missing, and improving it. This blog is part notebook, part experiment, and part record of that process.</p></article>
         </div>
       </div>
     </section>
 
     <section id="ambitions" class="section" aria-labelledby="ambitions-heading">
       <div class="shell">
-        <div class="section-heading"><div><div class="eyebrow">Long-term direction</div><h2 id="ambitions-heading">Big plans, one experiment at a time.</h2></div><p>Sometimes I get too ambitious—but that is part of the fun.</p></div>
+        <div class="section-heading"><div><div class="eyebrow">Long-term direction</div><h2 id="ambitions-heading">Big plans, one experiment at a time.</h2></div><p>Sometimes I get too ambitious·but that is part of the fun.</p></div>
         <div class="ambition-grid">
           <div class="ambition-card"><h3>Build an e-commerce business</h3><p>My goal is to start my own e-commerce business and learn by turning ideas into useful, real-world systems.</p></div>
           <div class="ambition-card"><h3>Create an automation software service</h3><p>I also want to start an automation software service company that helps people and organizations spend less time on repetitive work.</p></div>
