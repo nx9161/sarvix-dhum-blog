@@ -1,4 +1,4 @@
-# Sarvix Codes — DHUM Student Blog
+# Sarvix Codes: DHUM Student Blog
 
 A polished static student blog for Naman Parmar, a Rowan University Data Science major studying Digital Humanities.
 
@@ -16,8 +16,8 @@ After deployment:
 2. At Name.com, replace the current parking DNS records with the exact DNS records Vercel displays for this project.
 3. Verify the domain in Vercel and wait for SSL issuance.
 
-Do not guess Vercel's DNS values; use the values shown in the project dashboard for the assigned deployment.
+Do not guess Vercel DNS values. Use the values shown in the project dashboard for the assigned deployment.
 
 ## Content notes
 
-The first post reflects on Roopika Risam's *New Digital Worlds*, Lara Putnam's “The Transnational and the Text-Searchable,” and learning to use Hypothesis annotation. The post includes links to the reading sources and an accessible, mobile-responsive visual system.
+The site contains Week 1 and 2, Week 3, and Week 4 reflections, source links, a Reflection dropdown, a Hypothesis learning-tool section, an About section, and the official published Knight Lab StoryMap embed.
