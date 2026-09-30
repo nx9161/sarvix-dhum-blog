@@ -40,9 +40,10 @@
     nav a { text-decoration: none; }
     nav a:hover, nav a:focus, .nav-dropdown[open] > summary { color: var(--lime); }
     .nav-dropdown { position: relative; }
-    .nav-dropdown summary { cursor: pointer; list-style: none; }
+    .nav-dropdown summary { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border: 1px solid rgba(200,241,105,.34); border-radius: 999px; color: var(--lime); cursor: pointer; list-style: none; }
     .nav-dropdown summary::-webkit-details-marker { display: none; }
-    .nav-dropdown summary::after { content: "⌄"; margin-left: 6px; color: var(--coral); }
+    .nav-dropdown summary::after { content: "⌄"; color: var(--coral); }
+    .nav-dropdown summary:hover, .nav-dropdown summary:focus-visible { background: rgba(200,241,105,.1); color: var(--lime); }
     .nav-menu { position: absolute; right: 0; top: calc(100% + 12px); z-index: 20; display: grid; min-width: 230px; gap: 4px; padding: 8px; border: 1px solid rgba(200,241,105,.24); border-radius: 14px; background: rgba(17,29,48,.95); backdrop-filter: blur(18px); box-shadow: 0 18px 42px rgba(0,0,0,.32), 0 0 0 1px rgba(141,215,232,.06); }
     .nav-menu a { display: block; padding: 10px 12px; border-radius: 9px; color: var(--soft); white-space: nowrap; }
     .nav-menu a:hover, .nav-menu a:focus { background: rgba(200,241,105,.1); color: var(--lime); }
@@ -159,6 +160,7 @@
             <a href="#week-1-2">Blog-1 · Weeks 1 &amp; 2</a>
             <a href="#week-3">Blog-2 · Week 3</a>
             <a href="#week-4">Blog-3 · Week 4</a>
+            <a href="#storymap">StoryMap · Digital Tool</a>
           </div>
         </details>
         <a class="nav-about" href="#about-me">About Me</a>
@@ -201,7 +203,6 @@
         <aside class="sidebar" aria-label="Blog overview details">
           <div class="sidebox"><h3>Field note</h3><p>I use this space to connect what I am learning in Data Science with Digital Humanities questions about culture, access, memory, and meaning.</p></div>
           <div class="sidebox"><h3>Readings</h3><ul><li><a href="https://www.bbc.com/future/article/20240912-the-archivists-battling-to-save-the-internet" target="_blank" rel="noopener">Digital history and web preservation ↗</a></li><li><a href="https://muse.jhu.edu/book/62714" target="_blank" rel="noopener">Postcolonial Digital Humanities ↗</a></li><li><a href="https://timeline.knightlab.com/" target="_blank" rel="noopener">Knight Lab digital storytelling tools ↗</a></li></ul></div>
-          <div class="sidebox"><h3>Small algorithm · GPT Astra 5.6 reflection</h3><p>When I read or build something, I try to record the source, question the interface, look for what is missing, and explain what I found.</p></div>
         </aside>
       </div>
     </section>
@@ -242,7 +243,6 @@
         <aside class="sidebar" aria-label="Blog-1 details">
           <div class="sidebox"><h3>Field note</h3><p>Weeks 1 and 2 made me think about how easily digital culture can disappear. I want to pay more attention to what gets preserved and what gets left behind.</p></div>
           <div class="sidebox"><h3>Readings</h3><ul><li><a href="https://www.bbc.com/future/article/20240912-the-archivists-battling-to-save-the-internet" target="_blank" rel="noopener">Chris Stokel-Walker, “We’re losing our digital history” ↗</a></li><li><a href="https://academic.oup.com/ahr/article-abstract/108/3/735/22504" target="_blank" rel="noopener">Roy Rosenzweig, “Scarcity or Abundance?” ↗</a></li><li><a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive / Wayback Machine ↗</a></li></ul></div>
-          <div class="sidebox"><h3>Small algorithm · GPT Astra 5.6 reflection</h3><p>I check the date, source, capture history, and missing pieces before I treat an archived page as evidence.</p></div>
         </aside>
       </div>
     </section>
@@ -286,7 +286,6 @@
         <aside class="sidebar" aria-label="Blog-2 details">
           <div class="sidebox"><h3>Field note</h3><p>Week 3 made me slow down when I search. I now try to record my query, compare the results, and notice what the search leaves out.</p></div>
           <div class="sidebox"><h3>Readings</h3><ul><li><a href="https://muse.jhu.edu/book/62714" target="_blank" rel="noopener">Roopika Risam, <em>New Digital Worlds</em> ↗</a></li><li><a href="https://academic.oup.com/ahr/article/121/2/377/2581842" target="_blank" rel="noopener">Lara Putnam, “The Transnational and the Text-Searchable” ↗</a></li><li><a href="https://web.hypothes.is/" target="_blank" rel="noopener">Hypothesis collaborative annotation ↗</a></li></ul></div>
-          <div class="sidebox"><h3>Small algorithm · GPT Astra 5.6 reflection</h3><p>I record the search, compare what appears, look for what is missing, and ask who benefits from the way results are organized.</p></div>
         </aside>
       </div>
     </section>
@@ -316,17 +315,10 @@
           <h3>What I am taking forward</h3>
           <p>My main takeaway from Week 4 is that technical choices are also social choices. The platform I select, the license I use, the data format I save, the software I depend on, and the way I present a result all influence who can participate. Open Science gives me a language for access, reuse, and control. Disability and accessibility studies remind me that inclusion must be built into everyday practice.</p>
           <p>As I continue studying Data Science and Digital Humanities, I want to become more careful about efficiency and participation. A fast tool is not automatically a good tool if it excludes people. A beautiful visualization is not successful if its meaning disappears for anyone who cannot see the colors.</p>
-          <h3>Field note</h3>
-          <p>Week 4 taught me a practical habit for every digital project: before asking what a tool can produce, ask who can access it, who can modify it, who can understand it, and who might be missing from the process. I am carrying this timeline habit into my next StoryMap assignment and into the small applications I build outside class.</p>
-          <h3>Week 4 readings and resources</h3>
-          <p>Helene Schlicht’s “Open Access, Open Data, Open Software? Proprietary Tools and Their Restrictions” comes from <em>Digital Methods in the Humanities: Challenges, Ideas, Perspectives</em>, edited by Silke Schwandt and published by transcript Verlag in 2020. The reading introduces Open Science as a larger practice that includes Open Access, Open Data, Open Software, open review, open methods, and open metrics. It also explains the difference between gratis access, which removes a price barrier, and libre access, which also expands permissions for reuse.</p>
-          <p>The second reading is “Reframing the Conversation: Digital Humanists, Disabilities, and Accessibility,” published in <em>Debates in the Digital Humanities 2023</em> by the University of Minnesota Press. It argues that accessibility should be part of Digital Humanities practice from the beginning. The chapter discusses the social model of disability, multimodal access, captions, transcripts, alt text, clear design, user testing, and the difference between accessibility and accommodation.</p>
-          <div class="sources"><a class="source" href="https://ebookcentral.proquest.com/lib/rowan/detail.action?docID=6956231" target="_blank" rel="noopener">Helene Schlicht · “Open Access, Open Data, Open Software? Proprietary Tools and Their Restrictions” · Digital Methods in the Humanities, 2020</a><a class="source" href="https://muse.jhu.edu/book/103333" target="_blank" rel="noopener">“Reframing the Conversation: Digital Humanists, Disabilities, and Accessibility” · Debates in the Digital Humanities 2023</a><a class="source" href="https://timeline.knightlab.com/" target="_blank" rel="noopener">Knight Lab TimelineJS · Digital storytelling with time and media</a><a class="source" href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">GO FAIR · FAIR Guiding Principles</a></div>
         </article>
         <aside class="sidebar" aria-label="Week 4 details">
           <div class="sidebox"><h3>Field note</h3><p>Week 4 made me think about who can access, reuse, understand, and change a digital project. I want to ask those questions before I call a tool open.</p></div>
           <div class="sidebox"><h3>Readings</h3><ul><li><a href="https://ebookcentral.proquest.com/lib/rowan/detail.action?docID=6956231" target="_blank" rel="noopener">Helene Schlicht, “Open Access, Open Data, Open Software?” ↗</a></li><li><a href="https://muse.jhu.edu/book/103333" target="_blank" rel="noopener">“Reframing the Conversation: Digital Humanists, Disabilities, and Accessibility” ↗</a></li><li><a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">GO FAIR guiding principles ↗</a></li></ul></div>
-          <div class="sidebox"><h3>Small algorithm · GPT Astra 5.6 reflection</h3><p>I start by asking who can use the tool, who can change it, and who might be left out.</p></div>
         </aside>
       </div>
     </section>
@@ -344,7 +336,6 @@
           <div class="storymap-notes">
             <div class="sidebox"><h3>Field note</h3><p>StoryMap JS lets me connect the places that shaped my first years in the United States. Atlanta was the beginning, and Glassboro became my home base while the other trips added to the story.</p></div>
             <div class="sidebox"><h3>Readings</h3><ul><li><a href="https://timeline.knightlab.com/" target="_blank" rel="noopener">Knight Lab TimelineJS digital storytelling ↗</a></li><li><a href="https://storymap.knightlab.com/" target="_blank" rel="noopener">Knight Lab StoryMapJS guide ↗</a></li><li><a href="https://www.go-fair.org/fair-principles/" target="_blank" rel="noopener">FAIR principles for digital projects ↗</a></li></ul></div>
-            <div class="sidebox"><h3>Small algorithm · GPT Astra 5.6 reflection</h3><p>I start with my home base, add each place, check the image and caption, and make sure the story still works on a small screen.</p></div>
           </div>
         </div>
       </div>
