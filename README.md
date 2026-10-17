@@ -2,6 +2,10 @@
 
 A polished static student blog for Naman Parmar, a Rowan University Data Science major studying Digital Humanities.
 
+## Live Demo
+
+**[https://sarvix-dhum-blog.vercel.app](https://sarvix-dhum-blog.vercel.app)**
+
 ## Local preview
 
 Open `index.html` in a browser, or serve the folder with any static web server.
