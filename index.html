@@ -162,7 +162,7 @@
             <a href="#week-5">Blog-3 · Week 5</a>
             <a href="#storymap">StoryMap · Digital Tool</a>
             <a href="#week-6">Blog-4 · Week 6</a>
-            <a href="#tropy">Tropy · Digital Tool</a>
+            <a href="#tropy">Tropy · Digital Tool</a> <a href="#week-7">Blog-5 · Week 7</a> <a href="#voyant">Voyant · Digital Tool</a>
           </div>
         </details>
         <a class="nav-about" href="#about-me">About Me</a>
@@ -405,6 +405,65 @@
             <div class="sidebox"><h3>Resources</h3><ul>
               <li><a href="https://tropy.org/" target="_blank" rel="noopener">Tropy: research photo management ↗</a></li>
               <li><a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" target="_blank" rel="noopener">The Met Open Access policy ↗</a></li>
+            </ul></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="week-7" class="section" aria-labelledby="week-7-heading">
+      <div class="shell article-layout">
+        <article>
+          <span class="post-label">Blog-5 · Week 7</span>
+          <h2 id="week-7-heading">Automatic does not mean human-free.</h2>
+          <p><strong>My reflection on human-centred AI, the hidden labour behind ChatGPT, and reading a text without reading it</strong></p>
+          <p>So far this semester I have mostly asked what digital tools make visible and what they leave out. This week the readings turned that question toward the people inside the system. One article argues that humanities students should help design AI. The other shows workers who already shape AI every day, in ways most users never see. The tool for the week, Voyant, sits in between: it gives more people a way to analyse text, while still depending on choices someone made before the analysis starts.</p>
+
+          <h3>Who should learn how AI works?</h3>
+          <p>Jon Chun and Katherine Elkins start from crisis: humanities enrolments falling, students using ChatGPT to write, and AI moving into white-collar work. Their answer is not retreat. They built an AI curriculum inside digital humanities at Kenyon College so that humanities students can help create what they call human-centred AI. One question runs through the article: will we program humanity into our tools, or will we cede our humanity to AI?</p>
+          <p>What convinced me is that they do not stop at critique. They warn that critique alone sidelines humanists from decisions being made without them. Their courses teach real tools, including Python, Pandas, scikit-learn, and Google Colab. Students examine bias at every stage of the data science pipeline, then test competing definitions of fairness on the COMPAS parole algorithm using the What-If Tool. Fairness cannot be settled by one equation. Someone has to choose which definition to use, and that is a humanities question as much as a technical one.</p>
+          <p>As a Data Science major, I am usually on the other side of this classroom. My courses go deep on how models work and lighter on who decides what they are for. Their enrolment figures stayed with me: 61 percent women and more than 90 percent non-STEM students, in courses built entirely on free tools with no textbook costs. Access is a design choice. The important questions are shifting from how a model works to who it serves and why, and I want both kinds of fluency.</p>
+
+          <h3>Who reads the worst of the internet so a chatbot stays polite?</h3>
+          <p>Billy Perrigo’s TIME investigation shows the other side of that classroom. To make ChatGPT less toxic, OpenAI sent tens of thousands of snippets of text to an outsourcing firm, Sama, in Kenya, beginning in November 2021. Workers read and labelled graphic descriptions of sexual abuse, hate speech, and violence so that a safety system could learn to detect toxic language and filter it out.</p>
+          <p>The numbers are hard to sit with. Labelers took home between about $1.32 and $2 per hour, while OpenAI paid Sama $12.50 per hour for the project. Workers told TIME they were expected to read and label 150 to 250 passages in a nine-hour shift; Sama says the figure was 70. All four workers interviewed described being mentally scarred by the material, and the wellness support they were promised was hard to reach in practice. In February 2022, Sama cancelled the work eight months early, after a related image project raised alarms about illegal content. Ending the contract ended the exposure. It also cost workers income, and some of them their jobs.</p>
+          <p>In my field, labels like these are called ground truth, the same term from last week’s handwriting recognition project. A safety model is trained on human judgment, made quickly, under pressure, by people far from the product launch. When I evaluate a classifier I usually ask about its accuracy. This article makes me ask about the conditions its labels were produced under, and whose judgment the model has actually learned. Less toxic output rested on people absorbing the toxicity first.</p>
+
+          <h3>What can you learn from a text without reading it?</h3>
+          <p>Voyant Tools is this week’s digital tool: a free, browser-based way to analyse text through word frequencies, a word cloud of the most common terms, trends across a document, and words shown in context. It needs no code, which makes it exactly the kind of low-barrier tool Chun and Elkins describe. A humanities student can run a genuine analysis in minutes.</p>
+          <p>From my text mining coursework, I know what Voyant is doing under the surface: splitting text into tokens, counting them, and comparing the counts. Those steps carry assumptions. The romanized spelling variants from last week’s readings would be counted as separate words, so part of the pattern Voyant shows is a product of how the text was split before counting began. Distant reading reveals shapes no reader could see across thousands of pages. It cannot tell me what a passage means.</p>
+          <p>Used together, close and distant reading check each other. That is my running lesson from this course, now with a new layer. Every tool I have used this semester has people inside it: the people who designed it, the people whose labour trained it, and the people whose texts it counts. Before I trust a result, I still ask who can use the tool and what it makes visible. Now I also ask whose work is hidden inside it.</p>
+          <div class="tool-callout"><strong>Digital skill I practiced: analyzing a text with Voyant Tools</strong><p>For this week’s digital tool, I practiced using <a href="https://voyant-tools.org/" target="_blank" rel="noopener">Voyant Tools</a>, a free text analysis environment that runs in the browser. I loaded the full text of this week’s TIME investigation, cleaned of the PDF’s page headers and link text, and let Voyant count it: 2,998 words, 1,014 of them unique. The full session, with screenshots, is in the Voyant section below this post.</p><p>The first surprise was the ranking. The most frequent word was not OpenAI, at 41, but Sama, at 49, the outsourcing firm in the middle of the story. Around the two names sat a workplace vocabulary: work, content, employees, images. The counts alone were not the finding, though. Reading the sixteen appearances of “workers” in context showed people mostly being acted on: employed, asked, split into teams, moved. The count said how often. The contexts said how.</p><p>The limits mattered as much as the results. “Toxic” appears only six times in an article that is entirely about toxicity, and “labour”, the British spelling, appears zero times, so a spelling choice quietly decides what the tool can find. It reminded me of the spelling variants in last week’s readings: every count is decided before the counting starts, by the cleaning and the rules. I left with the same habit I am building all semester. Check who a tool centers, and read a few contexts before trusting any number it gives me.</p></div>
+        </article>
+        <aside class="sidebar" aria-label="Blog-5 details">
+          <div class="sidebox"><h3>Field note</h3><p>Week 7 shifted my attention from what a tool shows to who stands behind it: the students Chun and Elkins want in the room, and the Kenyan workers Perrigo shows were never in it. I want to keep asking both questions: who is invited to shape AI, and who is already shaping it without being seen.</p></div>
+          <div class="sidebox"><h3>Readings</h3><ul>
+            <li><a href="https://doi.org/10.3366/ijhac.2023.0310" target="_blank" rel="noopener">Jon Chun and Katherine Elkins, The Crisis of Artificial Intelligence: A New Digital Humanities Curriculum for Human-Centred AI ↗</a></li>
+            <li><a href="https://time.com/6247678/openai-chatgpt-kenya-workers/" target="_blank" rel="noopener">Billy Perrigo, OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic, TIME ↗</a></li>
+            <li><a href="https://voyant-tools.org/" target="_blank" rel="noopener">Voyant Tools, this week’s digital tool ↗</a></li>
+          </ul></div>
+        </aside>
+      </div>
+    </section>
+
+<section id="voyant" class="section" aria-labelledby="voyant-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <div><div class="eyebrow">Digital tool · Voyant</div><h2 id="voyant-heading">The most frequent word was not OpenAI.</h2></div>
+          <p>For this digital tool practice I worked in Voyant Tools, a free text analysis environment that runs in the browser, and turned it on this week’s own reading: the TIME investigation into the Kenyan workers behind ChatGPT’s safety system. I cleaned the article text of the PDF’s page headers, loaded it as a corpus, and read it through counts instead of paragraphs. The slides below walk through what the counting showed, where counting misleads, and what I check before trusting a frequency.</p>
+        </div>
+        <div class="storymap-layout">
+          <div>
+            <iframe class="storymap-embed" src="https://docs.google.com/presentation/d/1I9CTxNYVzEEoCeEdmYaYBZKlvlISd7f4vX0eAcwm3-E/embed" title="Voyant Tools: Counting What Counts" loading="lazy" allowfullscreen></iframe>
+            <a class="storymap-link" href="https://docs.google.com/presentation/d/1I9CTxNYVzEEoCeEdmYaYBZKlvlISd7f4vX0eAcwm3-E/edit" target="_blank" rel="noopener">Open presentation in a new tab ↗</a>
+            <p>The presentation works through the real session: 2,998 words and 1,014 unique word forms, the Cirrus cloud where Sama (49) outweighs OpenAI (41), the sixteen appearances of “workers” read in context, the trends graph that maps the article’s structure, and the limits of counting, including “toxic” appearing only six times and “labour” not at all. Every number can be checked against the live corpus linked in the resources.</p>
+          </div>
+          <div class="storymap-notes">
+            <div class="sidebox"><h3>Field note</h3><p>Counting felt objective until I read the contexts. The totals told me how often. The sentences around each word told me how, and that changed the finding.</p></div>
+            <div class="sidebox"><h3>Resources</h3><ul>
+              <li><a href="https://voyant-tools.org/" target="_blank" rel="noopener">Voyant Tools: text analysis in the browser ↗</a></li>
+              <li><a href="https://voyant-tools.org/?corpus=12b15b10715ea0e447e76fb0851136a3" target="_blank" rel="noopener">This session’s corpus, open it and check every count ↗</a></li>
+              <li><a href="https://time.com/6247678/openai-chatgpt-kenya-workers/" target="_blank" rel="noopener">The article the corpus was built from, TIME ↗</a></li>
             </ul></div>
           </div>
         </div>
