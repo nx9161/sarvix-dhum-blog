@@ -120,6 +120,10 @@
     .source:hover, .source:focus { border-color: var(--lime); color: var(--lime); transform: translateX(4px); }
     .storymap-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 24px; align-items: start; }
     .storymap-embed { display: block; width: 100%; height: min(72vh, 680px); min-height: 540px; border: 1px solid rgba(141,215,232,.28); border-radius: 22px; background: #fff; box-shadow: 0 18px 46px rgba(0,0,0,.2); }
+            .mw-map-wrap { margin-top: 2rem; }
+            .mw-map { height: 440px; width: 100%; border-radius: 14px; border: 1px solid rgba(232,180,77,0.35); z-index: 0; }
+            .mw-map-controls { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.6rem; font-size: 0.92rem; }
+            .mw-map-controls input[type="range"] { flex: 1; accent-color: #e8b44d; }
     .storymap-link { display: inline-flex; margin-top: 12px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--lime); text-decoration: none; font-size: .88rem; }
     .storymap-link:hover, .storymap-link:focus { border-color: var(--lime); background: rgba(200,241,105,.08); }
     .storymap-notes .sidebox { margin-bottom: 12px; }
@@ -500,13 +504,13 @@
       <div class="shell">
         <div class="section-heading">
           <div><div class="eyebrow">Digital tool · MapWarper</div><h2 id="mapwarper-heading">The legend bent, and that is the point.</h2></div>
-          <p>For this digital tool practice I worked in MapWarper, a free georeferencing tool that runs in the browser, and used it the way the Lagos paper uses ArcGIS: I took a flat map, Rowan University’s official 2025-2026 Glassboro parking map, pinned it to the modern world with four control points, and warped it until it lined up with today’s streets. The slides below walk through the workflow, and the warped map itself is live on MapWarper as map 113853.</p>
+          <p>For this digital tool practice I worked in MapWarper, a free georeferencing tool that runs in the browser, and used it the way the Lagos paper uses ArcGIS: I took a flat map, Rowan University’s official 2025-2026 Glassboro parking map, pinned it to the modern world with control points, fixed the fit when the first warp drifted, and warped it again until it lined up with today’s streets. The slides below tell the whole story of the project, and the finished map itself is embedded further down this section, served live from MapWarper as map 113853.</p>
         </div>
         <div class="storymap-layout">
           <div>
-            <iframe class="storymap-embed" src="https://docs.google.com/presentation/d/1S4GD4XnPgduZtp7mGqiMOkCcvEfDq9xr1kj3PtaaUuw/embed" title="Putting Old Maps in Their Place: Georeferencing with MapWarper" loading="lazy" allowfullscreen></iframe>
-            <a class="storymap-link" href="https://docs.google.com/presentation/d/1S4GD4XnPgduZtp7mGqiMOkCcvEfDq9xr1kj3PtaaUuw/edit" target="_blank" rel="noopener">Open presentation in a new tab ↗</a>
-            <p>The presentation works through the real session: the four control points (Route 322 at Main Street, High Street at Main Street, Route 322 at Girard Road, and Ellis Street at Girard Road), the rectified warp with the campus sitting between Mullica Hill Road and High Street, and the fit reported back: overall error 143.9, the east points loosest, a slight north lean, and the unmasked legend strip projecting as a diagonal band across the result. Every claim in the slides can be checked against the live map linked in the resources. A different set of points would have produced a slightly different campus, and that is Monmonier’s white lies and Adelusi-Adeluyi’s best guesses, learned by doing.</p>
+            <iframe class="storymap-embed" src="https://docs.google.com/presentation/d/1gYt9n7dF0-SleiBFmc1bHBo68yRt7P3LeChT1ol_7xM/embed" title="Putting Rowan's Parking Map in Its Place: My MapWarper Project" loading="lazy" allowfullscreen></iframe>
+            <a class="storymap-link" href="https://docs.google.com/presentation/d/1gYt9n7dF0-SleiBFmc1bHBo68yRt7P3LeChT1ol_7xM/edit" target="_blank" rel="noopener">Open presentation in a new tab ↗</a>
+            <p>The presentation tells the project as it happened: the first warp and the fit of 143.9 it honestly reported, the loose east points and the unmasked legend strip that gave the flaws away, and the fix that followed, masking first, corners re-pinned, new points added where the fit was weakest, and a preview check before the second warp. The result sits between Mullica Hill Road and High Street, and every claim in the slides can be checked against the live map embedded below. A different set of points would have produced a slightly different campus, and that is Monmonier’s white lies and Adelusi-Adeluyi’s best guesses, learned by doing.</p>
             <a class="storymap-link" href="https://mapwarper.net/maps/113853" target="_blank" rel="noopener">See the live warped map on MapWarper ↗</a>
           </div>
           <div class="storymap-notes">
@@ -516,7 +520,14 @@
               <li><a href="https://mapwarper.net/" target="_blank" rel="noopener">MapWarper: georeferencing in the browser ↗</a></li>
               <li><a href="http://newmapsoldlagos.com/shoreline.html" target="_blank" rel="noopener">The Old Shore, the shoreline vignette from New Maps of Old Lagos ↗</a></li>
             </ul></div>
-          </div>
+          
+        <div class="mw-map-wrap">
+          <h3>The map itself, live on this page</h3>
+          <p>My warped parking map, served as live tiles from MapWarper and laid over today's streets. Drag to explore, scroll to zoom, and use the slider to fade between my map and the modern one underneath.</p>
+          <div id="mw-map" class="mw-map" role="img" aria-label="Interactive map: the warped Rowan parking map overlaid on modern streets"></div>
+          <div class="mw-map-controls"><span>Modern map</span><input id="mw-opacity" type="range" min="0" max="100" value="85" aria-label="Overlay opacity"><span>My warped map</span></div>
+          <p><a class="storymap-link" href="https://mapwarper.net/maps/113853" target="_blank" rel="noopener">Open the map on MapWarper ↗</a></p>
+        </div></div>
         </div>
       </div>
     </section>
@@ -563,5 +574,18 @@
       });
     });
   </script>
-  </body>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  var el = document.getElementById('mw-map');
+  if (!el || typeof L === 'undefined') return;
+  var map = L.map('mw-map').setView([39.7063, -75.1198], 15);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+  var warped = L.tileLayer('https://mapwarper.net/maps/tile/113853/{z}/{x}/{y}.png', { attribution: 'Warped map: Naman Parmar via MapWarper', opacity: 0.85 }).addTo(map);
+  var slider = document.getElementById('mw-opacity');
+  if (slider) slider.addEventListener('input', function () { warped.setOpacity(this.value / 100); });
+})();
+</script>
+</body>
 </html>
